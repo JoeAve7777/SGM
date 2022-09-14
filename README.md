@@ -1,2 +1,2 @@
 # SGM
-Sort Generator Manager
+Sort Generator Manager 1.0
