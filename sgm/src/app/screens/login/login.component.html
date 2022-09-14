@@ -1,1 +1,59 @@
-<p>login works!</p>
+<table [width]="'100%'">
+  <tr>
+    <td align="center">
+      <p-card
+        [style]="{ margin: '10%', height: '100%', width: '50%' }"
+        styleClass="p-card-shadow"
+      >
+        <ng-template pTemplate="header" style="background-color: red">
+          <div style="background-color: #314183; height: 10px"></div>
+
+          <div class="flex flex-wrap justify-content-center">
+            <div
+              class="flex align-items-center justify-content-left"
+              style="width: 80%"
+            >
+              <br />
+              <h3>Welcome to Sort generator Manager</h3>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap justify-content-center">
+            <div
+              class="flex align-items-center justify-content-left"
+              style="width: 80%"
+            >
+              A central location where available servers are monitored
+
+            </div>
+          </div>
+         
+          <div class="sep"></div>
+         
+          <div class="flex flex-wrap justify-content-center">
+            <div
+              class="flex align-items-center justify-content-left"
+              style="width: 80%"
+            ></div>
+          </div>
+
+          <div
+            class="flex flex-wrap justify-content-center"
+            style="margin-top: 100px"
+          >
+            <div
+              class="flex align-items-center justify-content-left"
+              style="width: 80%"
+            >
+              <button pButton icon="pi pi-user" label="Sign In"></button>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+          ©1996-2022 Pitney Bowes Inc. All rights reserved.
+        </ng-template>
+      </p-card>
+    </td>
+  </tr>
+</table>

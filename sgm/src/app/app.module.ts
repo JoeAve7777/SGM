@@ -12,16 +12,19 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
-import {DropdownModule} from 'primeng/dropdown';
+import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
-import { TagModule } from 'primeng/tag'
-import {ChartModule} from 'primeng/chart';
+import { TagModule } from 'primeng/tag';
+import { ChartModule } from 'primeng/chart';
 
 import { TextBoxComponent } from './controls/text-box/text-box.component';
 import { DropDownListComponent } from './controls/drop-down-list/drop-down-list.component';
 import { TagComponent } from './controls/tag/tag.component';
 
-import { getTitle, HelperModuleModule } from './helper-module/helper-module.module';
+import {
+  getTitle,
+  HelperModuleModule,
+} from './helper-module/helper-module.module';
 
 import { AppConfig } from './enums/app-config';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +33,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './screens/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, TextBoxComponent, DropDownListComponent, TagComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    TextBoxComponent,
+    DropDownListComponent,
+    TagComponent,
+  ],
   imports: [
     // Angular Modules
     BrowserModule,
@@ -52,10 +61,16 @@ import { LoginComponent } from './screens/login/login.component';
     // Include Application Modules
     AppRoutingModule,
     HelperModuleModule,
-    ChartModule
+    ChartModule,
   ],
-  providers: [{ provide: AppConfig.Title, useFactory: getTitle },
-    {provide: HTTP_INTERCEPTORS, useClass: GlobalErrorHandlerInterceptor, multi: true }],
+  providers: [
+    { provide: AppConfig.Title, useFactory: getTitle },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalErrorHandlerInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
