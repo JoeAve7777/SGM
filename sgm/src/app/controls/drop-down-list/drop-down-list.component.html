@@ -1,0 +1,19 @@
+<div [formGroup]="formGroup" class="p-field">
+  <label>{{ labelCaption }}</label>
+  <small style="color: #dc3545" class="text-danger" *ngIf="hasErrors">
+    *
+  </small>
+  <br />
+  <p-dropdown 
+   [options]="options" 
+   optionLabel="label" 
+   optionValue="value"
+   name="{{id}}"
+   formControlName="{{id}}"
+   placeholder="{{placeHolder}}"
+   >
+  </p-dropdown>&nbsp;
+  <small style="color: #dc3545" class="text-danger" *ngIf="hasErrors"
+    >This field is required.
+  </small>
+</div>
