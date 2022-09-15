@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/services/UserService.service';
 
 import { AppConfig } from 'src/app/enums/app-config';
+import { AppRoute } from 'src/app/enums/app-config';
 
 import {
   FormBuilder,
@@ -21,7 +23,8 @@ import { User } from 'src/app/models/user';
 export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   obSub!: Subscription;
@@ -30,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   copyRight: string = AppConfig.CopyRight;
   title: string = AppConfig.Title;
-  notFound:boolean=false;
+  notFound: boolean = false;
 
   ngOnInit(): void {
     this.setupFormGroup();
@@ -61,9 +64,12 @@ export class LoginComponent implements OnInit {
         });
 
         if (userObj != undefined && userObj != null) {
-          this.notFound=false;
+          this.router.navigate([AppRoute.ServerList], {
+            replaceUrl: true,
+            skipLocationChange: true,
+          });
         } else {
-          this.notFound=true;
+          this.notFound = true;
         }
       },
       (error) => {

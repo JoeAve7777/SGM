@@ -7,8 +7,9 @@ export enum AppConfig {
   
   export enum AppRoute
   {
-    Login = '',      // Default Route
-    WildCard = '**'  // Catch All Route
+    Login = '',                  // Default Route
+    ServerList = 'serverList',   // Server List Screen
+    Default  = '**'              // Default Screen if route not found
   }
 
   
