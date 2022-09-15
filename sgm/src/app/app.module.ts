@@ -29,11 +29,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './screens/login/login.component';
+import { ServerListComponent } from './screens/server-list/server-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ServerListComponent,
 
   ],
   imports: [
