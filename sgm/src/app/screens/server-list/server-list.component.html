@@ -17,8 +17,18 @@
     <ng-template pTemplate="header">
       <tr>
         <th>Server</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th>
+          <ng-container>
+            Status
+
+            <p-columnFilter
+              type="text"
+              [field]="'status'"
+              display="menu"
+            ></p-columnFilter>
+          </ng-container>
+        </th>
+        <th></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-serverObj>
@@ -49,7 +59,14 @@
             {{ serverObj.status }}
           </div>
         </td>
-        <td></td>
+        <td>
+          <button
+            *ngIf="serverObj.status == 'Available'"
+            pButton
+            icon="pi pi-sync"
+            label="Request Server"
+          ></button>
+        </td>
       </tr>
     </ng-template>
   </p-table>
