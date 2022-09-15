@@ -1,4 +1,4 @@
-import { Iuser } from "../interfaces/IUser";
+import { Iuser } from "../interfaces/Iuser";
 
 export class User implements Iuser{
     id!: number;
