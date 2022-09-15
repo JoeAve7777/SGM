@@ -37,7 +37,7 @@
           <div
             *ngSwitchCase="'Available'"
             [title]="serverObj.status"
-            [ngClass]="'available-tag'"
+            [ngClass]="'base-tag base-available-tag'"
           >
             {{ serverObj.status }}
           </div>
@@ -45,7 +45,7 @@
           <div
             *ngSwitchCase="'Not Available'"
             [title]="serverObj.status"
-            [ngClass]="'not-available-tag'"
+            [ngClass]="'base-tag base-not-available-tag'"
           >
             {{ serverObj.status }}
           </div>
@@ -53,7 +53,7 @@
           <div
             *ngSwitchCase="'In Use'"
             [title]="serverObj.status"
-            [ngClass]="'inuse-tag'"
+            [ngClass]="'base-tag base-inuse-tag'"
           >
             {{ serverObj.status }}
           </div>
