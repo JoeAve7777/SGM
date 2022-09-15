@@ -1,7 +1,7 @@
 <div class="login-card">
   <form [formGroup]="formGroup" #user="ngForm" novalidate>
     <div style="margin-left: 50px">
-      <h2>Welcome to Sort Generator Manager</h2>
+      <h2>Welcome to {{title}}</h2>
       <p>A central location where available servers are monitored</p>
     </div>
 
@@ -42,7 +42,7 @@
     </div>
 
     <div class="login-footer">
-      <p>©1996-2022 Pitney Bowes Inc. All rights reserved.</p>
+      <p>{{copyRight}}</p>
     </div>
   </form>
 </div>

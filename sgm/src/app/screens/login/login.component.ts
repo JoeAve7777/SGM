@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppConfig } from 'src/app/enums/app-config';
+
 import {
   FormBuilder,
   FormGroup,
@@ -16,6 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   formGroup!:FormGroup;
+  copyRight:string = AppConfig.CopyRight;
+  title:string = AppConfig.Title;
 
   ngOnInit(): void {
 
