@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
+import { AppRoute } from 'src/app/enums/app-config';
 import { Server } from 'src/app/models/server';
 import { ServerService } from 'src/app/services/serverService.service';
 
@@ -11,7 +12,7 @@ import { ServerService } from 'src/app/services/serverService.service';
   styleUrls: ['./server-list.component.css'],
 })
 export class ServerListComponent implements OnInit, OnDestroy {
-  constructor(private serverService: ServerService) {}
+  constructor(private serverService: ServerService, private router:Router) {}
 
   obsSub!: Subscription;
   serverList: Server[] = [];
@@ -34,6 +35,14 @@ export class ServerListComponent implements OnInit, OnDestroy {
         //complete
       }
     );
+  }
+
+  logout()
+  {
+    this.router.navigate([AppRoute.Login], {
+      replaceUrl: true,
+      skipLocationChange: true,
+    });
   }
 
   redirect() {
