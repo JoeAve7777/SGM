@@ -1,27 +1,25 @@
 <div [formGroup]="formGroup" class="p-field">
-    <label>{{labelCaption}}</label> <small
-    style="color: #dc3545"
+  <label>{{ labelCaption }}</label>
+  <small
+    [style]="'color: #dc3545;font-size: 15px;font-weight: bold;'"
     class="text-danger"
     *ngIf="hasErrors"
-    > *
+  >
+    *
   </small>
-    <br>
-    <input
-      #textRef
-      type="{{type}}"
-      name="{{name}}"
-      id="{{id}}"
-      pInputText
-      formControlName="{{name}}"
-      placeholder="{{placeHolder}}"
-      (click)="click()"
-      
-    />&nbsp;
-    <small
-      style="color: #dc3545"
-      class="text-danger"
-      *ngIf="hasErrors"
-      >This field is required.
-    </small>
-  </div>
-  
+  <br />
+  <input
+    [style]="'margin-top: 10px;'"
+    #textRef
+    type="{{ type }}"
+    name="{{ name }}"
+    id="{{ id }}"
+    pInputText
+    formControlName="{{ name }}"
+    placeholder="{{ placeHolder }}"
+    (click)="click()"
+  />
+  &nbsp;
+  <small [style]="'color: #dc3545'" class="text-danger" *ngIf="hasErrors">
+  </small>
+</div>
