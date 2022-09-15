@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription, Subject } from 'rxjs';
+
+import { UserService } from 'src/app/services/UserService.service';
 
 import { AppConfig } from 'src/app/enums/app-config';
 
@@ -8,6 +11,7 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -15,14 +19,19 @@ import {
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService
+  ) {}
 
-  formGroup!:FormGroup;
-  copyRight:string = AppConfig.CopyRight;
-  title:string = AppConfig.Title;
+  obSub!: Subscription;
+
+  formGroup!: FormGroup;
+
+  copyRight: string = AppConfig.CopyRight;
+  title: string = AppConfig.Title;
 
   ngOnInit(): void {
-
     this.setupFormGroup();
   }
 
@@ -33,10 +42,35 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  siginIn()
-  {
-     let username = this.formGroup.get("username")?.value;
-     let password = this.formGroup.get("password")?.value;
+  siginIn() {
+    let username = this.formGroup.get('username')?.value;
+    let password = this.formGroup.get('password')?.value;
 
+    this.validateUser(username, password);
+  }
+
+  validateUser(username: string, password: string) {
+    this.obSub = this.userService.getUsers().subscribe(
+      (data) => {
+        let userList: User[] = data;
+        let userObj: any;
+
+        userObj = userList.find((obj) => {
+          return obj.username.toLowerCase() === username.toLowerCase();
+        });
+
+        if (userObj != undefined && userObj != null) {
+          alert('found');
+        } else {
+          alert('not found');
+        }
+      },
+      (error) => {
+        //error
+      },
+      () => {
+        //complete
+      }
+    );
   }
 }

@@ -3,7 +3,13 @@
     {
       "id": 1,
       "username": "joe",
-      "pasword": "123",
+      "pasword": "ave",
+      "email": "joseph.avallone@pb.com"
+     },
+     {
+      "id": 2,
+      "username": "john",
+      "pasword": "ave",
       "email": "joseph.avallone@pb.com"
      }
   ]
