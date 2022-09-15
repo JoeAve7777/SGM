@@ -1,5 +1,15 @@
 <div class="server-list-container">
-  <h2>Server Status List</h2>
+  <table [width]="'100%'">
+    <tr>
+      <td>
+        <h2>Server Status List</h2>
+      </td>
+      <td align="right">
+        <button pButton type="button"  icon="pi pi-sign-out" label="Logout" class="p-button-outlined"></button>
+      </td>
+    </tr>
+  </table>
+  
 </div>
 <div class="server-list-card">
   <p-table
@@ -10,7 +20,7 @@
     [showCurrentPageReport]="true"
     responsiveLayout="scroll"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [rowsPerPageOptions]="[5,10,25,50]"
+    [rowsPerPageOptions]="[5, 10, 25, 50]"
   >
     >
     <ng-template pTemplate="header">
@@ -59,11 +69,13 @@
           </div>
         </td>
         <td>
-          <button (click)="redirect()"
+          <button
+            (click)="redirect()"
             *ngIf="serverObj.status == 'Available'"
             pButton
             icon="pi pi-sync"
             label="Request Server"
+            class="p-button-outlined p-button-success"
           ></button>
         </td>
       </tr>
