@@ -24,10 +24,30 @@
     <ng-template pTemplate="body" let-serverObj>
       <tr>
         <td>{{ serverObj.name }}</td>
-        <td>{{ serverObj.status }}
-          <app-tag [tagText]="serverObj.status" [tagTitle]="'[Compliant Message]\n\nThis allows for additional information.\n\nMore information can be added here dynamically.'"></app-tag>
-      
+        <td [ngSwitch]="serverObj.status">
+          <div
+            *ngSwitchCase="'Available'"
+            [title]="serverObj.status"
+            [ngClass]="'available-tag'"
+          >
+            {{ serverObj.status }}
+          </div>
 
+          <div
+            *ngSwitchCase="'Not Available'"
+            [title]="serverObj.status"
+            [ngClass]="'not-available-tag'"
+          >
+            {{ serverObj.status }}
+          </div>
+
+          <div
+            *ngSwitchCase="'In Use'"
+            [title]="serverObj.status"
+            [ngClass]="'inuse-tag'"
+          >
+            {{ serverObj.status }}
+          </div>
         </td>
         <td></td>
       </tr>

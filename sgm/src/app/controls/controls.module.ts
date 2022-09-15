@@ -16,12 +16,11 @@ import { MenubarModule } from 'primeng/menubar';
 import { SharedModule } from 'primeng/api';
 
 import { TextBoxComponent } from '../controls/text-box/text-box.component';
-import { TagComponent } from '../controls/tag/tag.component';
 
 @NgModule({
   bootstrap: [],
-  declarations: [TextBoxComponent, TagComponent],
-  exports: [TextBoxComponent, TagComponent],
+  declarations: [TextBoxComponent],
+  exports: [TextBoxComponent],
   imports: [
     BrowserModule,
     ButtonModule,
