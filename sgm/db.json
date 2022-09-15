@@ -5,12 +5,72 @@
       "username": "joe",
       "pasword": "ave",
       "email": "joseph.avallone@pb.com"
-     },
-     {
+    },
+    {
       "id": 2,
       "username": "john",
       "pasword": "ave",
       "email": "joseph.avallone@pb.com"
-     }
+    }
+  ],
+  "servers": [
+    {
+      "id": 1,
+      "name": "Server 1",
+      "status": "In Use"
+    },
+    {
+      "id": 2,
+      "name": "Server 2",
+      "status": "Available"
+    }
+    ,
+    {
+      "id": 3,
+      "name": "Server 3",
+      "status": "In Use"
+    }
+    ,
+    {
+      "id": 4,
+      "name": "Server 4",
+      "status": "Available"
+    }
+    ,
+    {
+      "id": 5,
+      "name": "Server 5",
+      "status": "In Use"
+    }
+    ,
+    {
+      "id": 6,
+      "name": "Server 6",
+      "status": "In Use"
+    }
+    ,
+    {
+      "id": 7,
+      "name": "Server 7",
+      "status": "Not Available"
+    }
+    ,
+    {
+      "id": 8,
+      "name": "Server 8",
+      "status": "In Use"
+    }
+    ,
+    {
+      "id": 9,
+      "name": "Server 9",
+      "status": "Not Available"
+    }
+    ,
+    {
+      "id": 10,
+      "name": "Server 10",
+      "status": "Not Available"
+    }
   ]
 }
