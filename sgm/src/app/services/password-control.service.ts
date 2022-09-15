@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { AppConfig } from '../enums/app-config';
-import { user } from '../models/user';
+import { User } from '../models/user';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,27 +21,27 @@ export class PasswordControlService {
     this.apiUrl = AppConfig.ApiBaseUrl + this.apiUrl;
   }
 
-  getUsers(): Observable<user[]> {
-    return this.http.get<user[]>(this.apiUrl);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
-  getUser(id: number): Observable<user> {
-    return this.http.get<user>(this.apiUrl + '/' + id);
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(this.apiUrl + '/' + id);
   }
 
-  deleteUser(id: number): Observable<user> {
+  deleteUser(id: number): Observable<User> {
     const url = `${this.apiUrl}/${id}`;
 
-    return this.http.delete<user>(url);
+    return this.http.delete<User>(url);
   }
 
-  putUser(u: user): Observable<user> {
+  putUser(u: User): Observable<User> {
     const url = `${this.apiUrl}/${u.id}`;
 
-    return this.http.put<user>(url, u, httpOptions);
+    return this.http.put<User>(url, u, httpOptions);
   }
 
-  postPasswordControl(u: user): Observable<user> {
-    return this.http.post<user>(this.apiUrl, u, httpOptions);
+  postPasswordControl(u: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, u, httpOptions);
   }
 }
