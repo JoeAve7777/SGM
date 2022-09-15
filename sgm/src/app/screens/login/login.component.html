@@ -1,41 +1,48 @@
 <div class="login-card">
-  <div style="margin-left: 50px">
-    <h3>Welcome to Sort Generator Manager</h3>
-    <p>A central location where available servers are monitored</p>
-  </div>
+  <form [formGroup]="formGroup" #user="ngForm" novalidate>
+    <div style="margin-left: 50px">
+      <h3>Welcome to Sort Generator Manager</h3>
+      <p>A central location where available servers are monitored</p>
+    </div>
 
-  <div>
-    <div class="login-line"></div>
-  </div>
+    <div>
+      <div class="login-line"></div>
+    </div>
 
-  <div style="margin-left: 50px; margin-top: 10px">
-    <h3>Login</h3>
-  </div>
+    <div style="margin-left: 50px; margin-top: 10px">
+      <h3>Login</h3>
+    </div>
 
-  <div style="margin-left: 50px; margin-top: 10px">
-    <app-text-box
-      [formGroup]="formGroup"
-      [id]="'username'"
-      [name]="'username'"
-      [labelCaption]="'Username'"
-    ></app-text-box>
-  </div>
+    <div style="margin-left: 50px; margin-top: 10px">
+      <app-text-box
+        [formGroup]="formGroup"
+        [id]="'username'"
+        [name]="'username'"
+        [labelCaption]="'Username'"
+      ></app-text-box>
+    </div>
 
-  <div style="margin-left: 50px; margin-top: 10px">
-    <app-text-box
-      [formGroup]="formGroup"
-      [id]="'password'"
-      [name]="'password'"
-      [labelCaption]="'Password'"
-      [type]="'password'"
-    ></app-text-box>
-  </div>
+    <div style="margin-left: 50px; margin-top: 10px">
+      <app-text-box
+        [formGroup]="formGroup"
+        [id]="'password'"
+        [name]="'password'"
+        [labelCaption]="'Password'"
+        [type]="'password'"
+      ></app-text-box>
+    </div>
 
-  <div style="margin-left: 50px; margin-top: 25px">
-    <button pButton icon="pi pi-user" label="Sign In"></button>
-  </div>
+    <div style="margin-left: 50px; margin-top: 25px">
+      <button
+        pButton
+        icon="pi pi-user"
+        label="Sign In"
+        [disabled]="formGroup.invalid"
+      ></button>
+    </div>
 
-  <div class="login-footer">
-    <p>©1996-2022 Pitney Bowes Inc. All rights reserved.</p>
-  </div>
+    <div class="login-footer">
+      <p>©1996-2022 Pitney Bowes Inc. All rights reserved.</p>
+    </div>
+  </form>
 </div>
