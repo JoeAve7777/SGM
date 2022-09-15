@@ -17,9 +17,7 @@ import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { ChartModule } from 'primeng/chart';
 
-import { TextBoxComponent } from './controls/text-box/text-box.component';
-import { DropDownListComponent } from './controls/drop-down-list/drop-down-list.component';
-import { TagComponent } from './controls/tag/tag.component';
+
 
 import {
   getTitle,
@@ -36,9 +34,7 @@ import { LoginComponent } from './screens/login/login.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    TextBoxComponent,
-    DropDownListComponent,
-    TagComponent,
+
   ],
   imports: [
     // Angular Modules
