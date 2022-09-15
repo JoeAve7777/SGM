@@ -1,16 +1,17 @@
 <div class="server-list-card">
-  <div style="margin-left: 50px">
-    <h2>Server List</h2>
+  <div style="margin-left: 10px">
+    <h2>Server Status List</h2>
   </div>
 
   <p-table
     dataKey="id"
+    [value]="serverList"
     [paginator]="true"
-    [rows]="10"
+    [rows]="5"
     [showCurrentPageReport]="true"
     responsiveLayout="scroll"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [rowsPerPageOptions]="[10, 25, 50]"
+    [rowsPerPageOptions]="[5, 10, 25, 50]"
   >
     >
     <ng-template pTemplate="header">
@@ -20,8 +21,14 @@
         <th>Action</th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-pwdCntr>
+    <ng-template pTemplate="body" let-serverObj>
       <tr>
+        <td>{{ serverObj.name }}</td>
+        <td>{{ serverObj.status }}
+          <app-tag [tagText]="serverObj.status" [tagTitle]="'[Compliant Message]\n\nThis allows for additional information.\n\nMore information can be added here dynamically.'"></app-tag>
+      
+
+        </td>
         <td></td>
       </tr>
     </ng-template>

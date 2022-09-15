@@ -1,0 +1,8 @@
+<a href="#" style="text-decoration: none" (click)="clickCompliant()">
+  <div
+    [title]="tagTitle"
+    [ngClass]="['compliant-tag', getCompliantClass(tagText)]"
+  >
+    {{ tagText }}
+  </div>
+</a>

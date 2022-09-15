@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -20,14 +20,14 @@ import { User } from 'src/app/models/user';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router
   ) {}
 
-  obSub!: Subscription;
+  obsSub!: Subscription;
 
   formGroup!: FormGroup;
 
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
   }
 
   validateUser(username: string, password: string) {
-    this.obSub = this.userService.getUsers().subscribe(
+    this.obsSub = this.userService.getUsers().subscribe(
       (data) => {
         let userList: User[] = data;
         let userObj: any;
@@ -79,5 +79,11 @@ export class LoginComponent implements OnInit {
         //complete
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    if (this.obsSub != null && this.obsSub != undefined) {
+      this.obsSub.unsubscribe();
+    }
   }
 }
