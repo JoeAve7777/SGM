@@ -32,7 +32,11 @@
       ></app-text-box>
     </div>
 
-    <div style="margin-left: 50px; margin-top: 50px">
+    <ng-container *ngIf="notFound">
+       <p class="login-notfound">User Not Found</p>
+    </ng-container>
+
+    <div style="margin-left: 50px; margin-top: 40px">
       <button
         (click)="siginIn()"
         pButton

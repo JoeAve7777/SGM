@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   copyRight: string = AppConfig.CopyRight;
   title: string = AppConfig.Title;
+  notFound:boolean=false;
 
   ngOnInit(): void {
     this.setupFormGroup();
@@ -60,9 +61,9 @@ export class LoginComponent implements OnInit {
         });
 
         if (userObj != undefined && userObj != null) {
-          alert('found');
+          this.notFound=false;
         } else {
-          alert('not found');
+          this.notFound=true;
         }
       },
       (error) => {
