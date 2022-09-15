@@ -59,7 +59,7 @@
           </div>
         </td>
         <td>
-          <button
+          <button (click)="redirect()"
             *ngIf="serverObj.status == 'Available'"
             pButton
             icon="pi pi-sync"

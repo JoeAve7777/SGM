@@ -20,8 +20,6 @@ export class ServerListComponent implements OnInit, OnDestroy {
     this.loadServerData();
   }
 
-  ngOnDestroy(): void {}
-
   loadServerData() {
     this.obsSub = this.serverService.getServers().subscribe(
       (data) => {
@@ -34,5 +32,15 @@ export class ServerListComponent implements OnInit, OnDestroy {
         //complete
       }
     );
+  }
+
+  redirect() {
+    window.open("https://www.pitneybowes.com/us", "mozillaTab");
+  }
+
+  ngOnDestroy(): void {
+    if (this.obsSub != null && this.obsSub != undefined) {
+      this.obsSub.unsubscribe();
+    }
   }
 }
