@@ -33,4 +33,10 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  siginIn()
+  {
+     let username = this.formGroup.get("username")?.value;
+     let password = this.formGroup.get("password")?.value;
+
+  }
 }
