@@ -1,1 +1,29 @@
-<p>server-list works!</p>
+<div class="server-list-card">
+  <div style="margin-left: 50px">
+    <h2>Server List</h2>
+  </div>
+
+  <p-table
+    dataKey="id"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    responsiveLayout="scroll"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[10, 25, 50]"
+  >
+    >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Server</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pwdCntr>
+      <tr>
+        <td></td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
