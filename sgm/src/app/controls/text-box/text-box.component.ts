@@ -9,6 +9,7 @@ import { Form, FormGroup } from '@angular/forms';
 export class TextBoxComponent implements OnInit {
   @Input() formGroup!: FormGroup;
   @Input() id: string = '';
+  @Input() name: string = '';
   @Input() type: string = 'text';
   @Input() labelCaption: string = '';
   @Input() placeHolder: string = '';

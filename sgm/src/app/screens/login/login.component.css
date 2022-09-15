@@ -1,6 +1,22 @@
-.line {
+.login-line {
   border-top: 1px solid lightgray;
-  margin-left: 50px;
-  margin-right: 50px;
   margin-top: 20px;
+}
+
+.login-footer {
+  margin: auto;
+  padding: 1px;
+  text-align: center;
+}
+
+.login-card {
+  background-color: white;
+  border-top: 8px solid #314183;
+  width: 1100px;
+  margin: 0 auto;
+  margin-top: 100px;
+  line-height: 1.5;
+  color: #727272;
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
 }
