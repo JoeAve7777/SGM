@@ -23,7 +23,9 @@ export class ServerListComponent implements OnInit, OnDestroy {
   loadServerData() {
     this.obsSub = this.serverService.getServers().subscribe(
       (data) => {
-        this.serverList = data;
+        this.serverList = data.sort((a, b) =>
+        a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase() ? -1 : 1
+      );
       },
       (error) => {
         //error
