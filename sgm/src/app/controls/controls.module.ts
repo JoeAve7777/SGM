@@ -1,32 +1,43 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ButtonModule } from 'primeng/button';
-import { SharedModule } from 'primeng/api';
-import { StyleClassModule } from 'primeng/styleclass';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
+import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
-import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
-import { TableModule } from 'primeng/table';
-import { TagModule } from 'primeng/tag';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
+import { SharedModule } from 'primeng/api';
+
+import { TextBoxComponent } from '../controls/text-box/text-box.component';
 
 @NgModule({
-  declarations: [],
-
+  bootstrap: [],
+  declarations: [TextBoxComponent],
+  exports: [TextBoxComponent],
   imports: [
-    CommonModule,
+    BrowserModule,
     ButtonModule,
-    SharedModule,
-    StyleClassModule,
-    ConfirmDialogModule,
-    DialogModule,
+    CalendarModule,
     CardModule,
-    InputTextModule,
-    TableModule,
-    TagModule,
+    CheckboxModule,
+    CommonModule,
+    DialogModule,
+    DynamicDialogModule,
     DropdownModule,
+    FormsModule,
+    InputMaskModule,
+    InputTextModule,
+    MenubarModule,
+    ReactiveFormsModule,
+    SharedModule,
   ],
+  providers: [],
 })
 export class ControlsModule {}

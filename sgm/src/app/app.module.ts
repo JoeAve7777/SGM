@@ -15,8 +15,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
-import { ChartModule } from 'primeng/chart';
 
+import { ControlsModule } from './controls/controls.module';
 
 
 import {
@@ -57,7 +57,7 @@ import { LoginComponent } from './screens/login/login.component';
     // Include Application Modules
     AppRoutingModule,
     HelperModuleModule,
-    ChartModule,
+    ControlsModule
   ],
   providers: [
     { provide: AppConfig.Title, useFactory: getTitle },
