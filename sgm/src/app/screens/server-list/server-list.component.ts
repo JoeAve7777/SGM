@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { AppRoute } from 'src/app/enums/app-config-interal';
+import { AppRoute } from 'src/app/enums/app-enums';
 import { Server } from 'src/app/models/server';
 import { ServerService } from 'src/app/services/serverService.service';
 
@@ -39,6 +39,8 @@ export class ServerListComponent implements OnInit, OnDestroy {
 
   logout()
   {
+    sessionStorage.setItem('sgm-auth', '');
+
     this.router.navigate([AppRoute.Login], {
       replaceUrl: true,
       skipLocationChange: true,

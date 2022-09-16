@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { AppConfiguration } from 'src/app/config/app-configuration';
 import { UserService } from 'src/app/services/UserService.service';
 
-import { AppRoute } from 'src/app/enums/app-config-interal';
+import { AppRoute } from 'src/app/enums/app-enums';
 
 import {
   FormBuilder,
@@ -21,7 +21,8 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(private appConfig:AppConfiguration,
+  constructor(
+    private appConfig: AppConfiguration,
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router
@@ -30,10 +31,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   obsSub!: Subscription;
 
   formGroup!: FormGroup;
-  
+
   title?: string = this.appConfig.title;
   copyRight?: string = this.appConfig.copyRight;
- 
+
   notFound: boolean = false;
 
   ngOnInit(): void {
@@ -64,12 +65,20 @@ export class LoginComponent implements OnInit, OnDestroy {
           return obj.username.toLowerCase() === username.toLowerCase();
         });
 
-        if (userObj != undefined && userObj != null) {
+        if (
+          userObj !== undefined &&
+          userObj !== null &&
+          userObj.password == password
+        ) {
+
+          sessionStorage.setItem('sgm-auth', userObj.username);
+
           this.router.navigate([AppRoute.ServerList], {
             replaceUrl: true,
             skipLocationChange: true,
           });
         } else {
+          sessionStorage.setItem('sgm-auth', '');
           this.notFound = true;
         }
       },
