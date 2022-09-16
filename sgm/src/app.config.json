@@ -1,4 +1,5 @@
 {
-  "baseUrl": "localhost:8800/api",
-  "title": "My awesome app"
+  "apiBaseUrl": "http://localhost:5000/",
+  "title": "Joe Sort Generator Manager",
+  "copyRight" : "©1996-2022 Pitney Bowes Inc. All rights reserved."
 }

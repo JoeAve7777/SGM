@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
+import { AppConfiguration } from 'src/app/config/app-configuration';
 import { UserService } from 'src/app/services/UserService.service';
 
-import { AppConfigInternal } from 'src/app/enums/app-config-interal';
 import { AppRoute } from 'src/app/enums/app-config-interal';
 
 import {
@@ -21,7 +21,7 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  constructor(
+  constructor(private appConfig:AppConfiguration,
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router
@@ -30,9 +30,10 @@ export class LoginComponent implements OnInit, OnDestroy {
   obsSub!: Subscription;
 
   formGroup!: FormGroup;
-
-  copyRight: string = AppConfigInternal.CopyRight;
-  title: string = AppConfigInternal.Title;
+  
+  title?: string = this.appConfig.title;
+  copyRight?: string = this.appConfig.copyRight;
+ 
   notFound: boolean = false;
 
   ngOnInit(): void {

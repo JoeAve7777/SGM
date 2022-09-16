@@ -15,8 +15,9 @@ export class JsonAppConfigService extends AppConfiguration {
       .get<AppConfiguration>('app.config.json')
       .toPromise()
       .then((data) => {
-        this.baseUrl = data?.baseUrl;
+        this.apiBaseUrl = data?.apiBaseUrl;
         this.title = data?.title;
+        this.copyRight=data?.copyRight;
       })
       .catch(() => {
         console.error('Could not load configuration file');
