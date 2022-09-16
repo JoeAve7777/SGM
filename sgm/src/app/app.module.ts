@@ -22,11 +22,6 @@ import { TagModule } from 'primeng/tag';
 
 import { ControlsModule } from './controls/controls.module';
 
-import {
-  getTitle,
-  HelperModuleModule,
-} from './helper-module/helper-module.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -63,7 +58,6 @@ export function initializerFn(jsonAppConfigService: JsonAppConfigService) {
     DropdownModule,
     // Include Application Modules
     AppRoutingModule,
-    HelperModuleModule,
     ControlsModule,
   ],
   providers: [
