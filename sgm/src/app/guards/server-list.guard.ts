@@ -24,10 +24,10 @@ export class ServerListGuard implements CanActivate {
     | UrlTree {
     const sgmAuth = sessionStorage.getItem('sgm-auth');
 
-    console.log("Hit Gaurd"+sgmAuth);
+    console.log('Hit Gaurd' + sgmAuth);
 
-    if (sgmAuth !== null && sgmAuth !=='') {
-        return true;
+    if (sgmAuth !== null && sgmAuth !== '') {
+      return true;
     } else {
       return this.router.parseUrl('/login');
     }

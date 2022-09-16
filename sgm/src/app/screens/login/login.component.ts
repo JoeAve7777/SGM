@@ -70,7 +70,6 @@ export class LoginComponent implements OnInit, OnDestroy {
           userObj !== null &&
           userObj.password == password
         ) {
-
           sessionStorage.setItem('sgm-auth', userObj.username);
 
           this.router.navigate([AppRoute.ServerList], {

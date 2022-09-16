@@ -12,7 +12,7 @@ import { ServerService } from 'src/app/services/serverService.service';
   styleUrls: ['./server-list.component.css'],
 })
 export class ServerListComponent implements OnInit, OnDestroy {
-  constructor(private serverService: ServerService, private router:Router) {}
+  constructor(private serverService: ServerService, private router: Router) {}
 
   obsSub!: Subscription;
   serverList: Server[] = [];
@@ -25,8 +25,8 @@ export class ServerListComponent implements OnInit, OnDestroy {
     this.obsSub = this.serverService.getServers().subscribe(
       (data) => {
         this.serverList = data.sort((a, b) =>
-        a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase() ? -1 : 1
-      );
+          a.status.toLocaleLowerCase() < b.status.toLocaleLowerCase() ? -1 : 1
+        );
       },
       (error) => {
         //error
@@ -37,8 +37,7 @@ export class ServerListComponent implements OnInit, OnDestroy {
     );
   }
 
-  logout()
-  {
+  logout() {
     sessionStorage.setItem('sgm-auth', '');
 
     this.router.navigate([AppRoute.Login], {
@@ -48,7 +47,7 @@ export class ServerListComponent implements OnInit, OnDestroy {
   }
 
   redirect() {
-    window.open("https://www.pitneybowes.com/us", "mozillaTab");
+    window.open('https://www.pitneybowes.com/us', 'mozillaTab');
   }
 
   ngOnDestroy(): void {

@@ -21,7 +21,6 @@ export class TextBoxComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-
     this.showError = this.hasErrors;
   }
 
@@ -34,8 +33,7 @@ export class TextBoxComponent implements OnInit {
   }
 
   get hasErrors(): boolean {
-
-    let result : boolean = false;
+    let result: boolean = false;
 
     const fc = this.getFormControls();
 
