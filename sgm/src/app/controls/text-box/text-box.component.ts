@@ -16,13 +16,9 @@ export class TextBoxComponent implements OnInit {
 
   @Output() textBoxClick: EventEmitter<string> = new EventEmitter<string>();
 
-  showError: boolean = true;
-
   constructor() {}
 
-  ngOnInit(): void {
-    this.showError = this.hasErrors;
-  }
+  ngOnInit(): void {}
 
   click() {
     this.textBoxClick.emit('Clicked');
