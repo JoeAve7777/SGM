@@ -1,4 +1,4 @@
-export enum AppConfig {
+export enum AppConfigInternal {
     ApiBaseUrl = 'http://localhost:5000/',
     BaseUrl = 'BASE_URL',
     CopyRight = '©1996-2022 Pitney Bowes Inc. All rights reserved.',

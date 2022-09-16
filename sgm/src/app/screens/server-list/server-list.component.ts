@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { AppRoute } from 'src/app/enums/app-config';
+import { AppRoute } from 'src/app/enums/app-config-interal';
 import { Server } from 'src/app/models/server';
 import { ServerService } from 'src/app/services/serverService.service';
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { AppConfig } from '../enums/app-config';
+import { AppConfigInternal } from '../enums/app-config-interal';
 import { Server } from '../models/server';
 
 const httpOptions = {
@@ -18,7 +18,7 @@ export class ServerService {
   private apiUrl = 'servers';
 
   constructor(private http: HttpClient) {
-    this.apiUrl = AppConfig.ApiBaseUrl + this.apiUrl;
+    this.apiUrl = AppConfigInternal.ApiBaseUrl + this.apiUrl;
   }
 
   getServers(): Observable<Server[]> {

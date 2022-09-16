@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/services/UserService.service';
 
-import { AppConfig } from 'src/app/enums/app-config';
-import { AppRoute } from 'src/app/enums/app-config';
+import { AppConfigInternal } from 'src/app/enums/app-config-interal';
+import { AppRoute } from 'src/app/enums/app-config-interal';
 
 import {
   FormBuilder,
@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   formGroup!: FormGroup;
 
-  copyRight: string = AppConfig.CopyRight;
-  title: string = AppConfig.Title;
+  copyRight: string = AppConfigInternal.CopyRight;
+  title: string = AppConfigInternal.Title;
   notFound: boolean = false;
 
   ngOnInit(): void {

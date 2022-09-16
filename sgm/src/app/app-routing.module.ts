@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AppRoute } from './enums/app-config';
+import { AppRoute } from './enums/app-config-interal';
 
 import { LoginComponent } from './screens/login/login.component';
 import { ServerListComponent } from './screens/server-list/server-list.component';
