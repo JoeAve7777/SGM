@@ -7,6 +7,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { AppRoute } from 'src/app/enums/app-enums';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,12 @@ export class ServerListGuard implements CanActivate {
     if (sgmAuth !== null && sgmAuth !== '') {
       return true;
     } else {
-      return this.router.parseUrl('/login');
+      
+      this.router.navigate([AppRoute.Login], {
+        replaceUrl: true,
+        skipLocationChange: true,
+      });
+      return false;
     }
   }
 }
