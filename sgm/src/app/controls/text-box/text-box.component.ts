@@ -42,4 +42,15 @@ export class TextBoxComponent implements OnInit {
     }
     return result;
   }
+
+  get isPristine(): boolean {
+    let result: boolean = false;
+
+    const fc = this.getFormControls();
+
+    if (fc != null) {
+      result = fc[this.id].pristine;
+    }
+    return result;
+  }
 }
