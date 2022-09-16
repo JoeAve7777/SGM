@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { AppConfigInternal } from '../enums/app-config-interal';
+import { AppConfiguration } from '../config/app-configuration';
 import { User } from '../models/user';
 
 const httpOptions = {
@@ -17,8 +17,11 @@ const httpOptions = {
 export class UserService {
   private apiUrl = 'users';
 
-  constructor(private http: HttpClient) {
-    this.apiUrl = AppConfigInternal.ApiBaseUrl + this.apiUrl;
+  constructor(
+    private http: HttpClient,
+    private appConfiguration: AppConfiguration
+  ) {
+    this.apiUrl = appConfiguration.apiBaseUrl + this.apiUrl;
   }
 
   getUsers(): Observable<User[]> {

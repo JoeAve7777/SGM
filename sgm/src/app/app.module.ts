@@ -27,7 +27,6 @@ import {
   HelperModuleModule,
 } from './helper-module/helper-module.module';
 
-import { AppConfigInternal } from './enums/app-config-interal';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -68,7 +67,6 @@ export function initializerFn(jsonAppConfigService: JsonAppConfigService) {
     ControlsModule,
   ],
   providers: [
-    { provide: AppConfigInternal.Title, useFactory: getTitle },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: GlobalErrorHandlerInterceptor,
