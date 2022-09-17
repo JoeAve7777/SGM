@@ -2,4 +2,4 @@
 
 
 // Build
-ng build --base-href "/sgm/"
+ng build --prod --base-href "/sgm/"

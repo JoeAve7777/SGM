@@ -6,6 +6,7 @@ import { ServerListGuard } from './guards/server-list.guard';
 
 import { LoginComponent } from './screens/login/login.component';
 import { ServerListComponent } from './screens/server-list/server-list.component';
+import { DefaultComponent } from './screens/default/default.component';
 
 const routes: Routes = [
   { path: AppRoute.Login, component: LoginComponent, pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [ServerListGuard],
   },
-  { path: AppRoute.Default, component: LoginComponent, pathMatch: 'full' },
+  { path: AppRoute.Default, component: DefaultComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

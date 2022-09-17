@@ -29,6 +29,7 @@ import { LoginComponent } from './screens/login/login.component';
 import { ServerListComponent } from './screens/server-list/server-list.component';
 import { JsonAppConfigService } from './config/json-app-config.service';
 import { AppConfiguration } from './config/app-configuration';
+import { DefaultComponent } from './screens/default/default.component';
 
 export function initializerFn(jsonAppConfigService: JsonAppConfigService) {
   return () => {
@@ -37,7 +38,7 @@ export function initializerFn(jsonAppConfigService: JsonAppConfigService) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, ServerListComponent],
+  declarations: [AppComponent, LoginComponent, ServerListComponent, DefaultComponent],
   imports: [
     // Angular Modules
     BrowserModule,
