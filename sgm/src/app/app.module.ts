@@ -8,6 +8,7 @@ import {
   HTTP_INTERCEPTORS,
 } from '@angular/common/http';
 import { GlobalErrorHandlerInterceptor } from './interceptors/global-error-handler.interceptor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ButtonModule } from 'primeng/button';
 import { SharedModule } from 'primeng/api';
@@ -62,6 +63,7 @@ export function initializerFn(jsonAppConfigService: JsonAppConfigService) {
     ControlsModule,
   ],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
     {
       provide: HTTP_INTERCEPTORS,
       useClass: GlobalErrorHandlerInterceptor,
